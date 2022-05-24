@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   baseUrl="http://localhost:54716/api/user";
   login={
     id:"",
+    mail:"",
     password:""
   }
 logis():void{
@@ -33,7 +34,7 @@ this.log().subscribe(
   }
      
  else {Swal.fire({
-  title: "the password is incorrect!!!",
+  title: "הסיסמא שגויה!!!!!!!!!",
   icon: "warning",
   //background:"red"
  });
@@ -41,7 +42,7 @@ this.login.password="";}},
 (err:User)=>{
   console.log("err");
   Swal.fire({
-    title: "the user doesn't  exist!!!",
+    title: "המשתמש אינו קיים!!!!!!!!!!!",
     icon: "error",
    });
   
@@ -52,7 +53,7 @@ this.login.password="";}},
 //להעביר לקומפוננטה register
 })}
 
-log(){return this.http.get<User>(`${this.baseUrl}?id=${this.login.id}`);}
+log(){return this.http.get<User>(`${this.baseUrl}?mail=${this.login.mail}`);}
 
 
 checkCorrectPassword(pass:string):boolean{
@@ -69,9 +70,4 @@ return false;
   }
 
 }
-// swal({
-//   title: "Good job!",
-//   text: "You clicked the button!",
-//   icon: "success",
-//   button: "Aww yiss!",
-// });
+

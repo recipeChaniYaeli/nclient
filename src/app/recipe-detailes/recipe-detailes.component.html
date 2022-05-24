@@ -19,7 +19,9 @@
 </ol>
 <!-- <p *ngFor="let item1 of recipe.ListOfRe"></p>
 <p *ngFor="let item of recipe.Preparetion">{{item}}</p> -->
-<button *ngIf="isShowDelete()" (click)="onDelete()" class=" btn btn-danger">delete</button>
-<button *ngIf="isShowAddToBook()" (click)=""
+<button *ngIf="isShowDelete()" (click)="onDelete()" class=" btn btn-danger">מחיקה</button>
+<div>
+<br/>
+<button *ngIf="isShowAddToBook()" (click)="onAddToBook()" class=" btn btn-danger">הוסף לספר המתכונים</button></div>
 </div>
 </div>

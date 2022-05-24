@@ -22,7 +22,6 @@ password:"777"
   //לעשות בדיקות תקינות
 myForm:FormGroup=new FormGroup({
 "name":new FormControl(null,Validators.required),
-"id":new FormControl(null,Validators.required),
 "password":new FormControl(null,Validators.required),
 "truepassword":new FormControl(null,Validators.required),
 "mail":new FormControl(null,Validators.required)

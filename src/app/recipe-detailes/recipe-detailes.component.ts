@@ -57,15 +57,30 @@ if (x==this.recipe.IdUser) {
 return false;
 }
 onDelete(){
-Swal.fire("Are you sure?");
-  this.recSer.DeleteRecipe(this.recipe.Id).subscribe((secc)=>{
+Swal.fire({title:"האם אתה בטוח?",showCancelButton: true}).then((result) => {  
+  if (result.value) {  
+    this.recSer.DeleteRecipe(this.recipe.Id).subscribe((secc)=>{
 
-  this.router.navigate(["allrecipes"]);
+      this.router.navigate(["allrecipes"]);
+      
+    },
+    err=>{alert("error");
+    alert(err);
+    })
+    Swal.fire(  
+      'נמחק!',  
+      'המתכון שלך נמחק.',  
+      'success'  
+    )  
+  } else if (result.dismiss === Swal.DismissReason.cancel) {  
+    Swal.fire(  
+      '!בוטל',  
+      'המחיקה בוטלה',  
+      'error'  
+    )  
+  }  
+})  
   
-},
-err=>{alert("error");
-alert(err);
-})
 
 }
 isShowAddToBook(){
