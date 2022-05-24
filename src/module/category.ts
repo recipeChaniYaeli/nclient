@@ -1,3 +1,3 @@
 export class Category{
-    constructor( public  Id :string, public Name :string, public IconROuting :string){}
+    constructor( public  CategoryId :number, public CategoryName :string, public IconcategoryIconROutingOuting :string){}
 }
