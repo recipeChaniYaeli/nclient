@@ -1,0 +1,13 @@
+div{
+    width: 100vw;
+    text-align: center;
+   
+}
+.input-group-text{
+    display: inline-block;
+    width: 33%;
+}
+span{
+    width: 33vw;
+    margin: 20px;
+}

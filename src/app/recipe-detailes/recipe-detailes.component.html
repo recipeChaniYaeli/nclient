@@ -1,0 +1,25 @@
+
+<div>
+    <img style="float: left;"[src]="recipe.Image" class="imgre"/>
+    <div style="float: right ;margin-right: 3vw;" dir="rtl">
+<img [src]="category.IconROuting"/>
+<p>{{category.Name}}</p>
+
+<p>{{recipe.Name}}</p>
+<p>
+    {{recipe.Description}}
+</p>
+<p>{{recipe.TimeDursation|time}}</p>
+<p>{{recipe.Level|level}}</p>
+<ul type="none">רכיבים
+    <li *ngFor="let item1 of recipe.ListOfRe">🥄{{item1}}</li>
+</ul>
+<ol type="none">אופן ההכנה
+    <li *ngFor="let item of recipe.Preparetion"> {{item}}</li>
+</ol>
+<!-- <p *ngFor="let item1 of recipe.ListOfRe"></p>
+<p *ngFor="let item of recipe.Preparetion">{{item}}</p> -->
+<button *ngIf="isShowDelete()" (click)="onDelete()" class=" btn btn-danger">delete</button>
+<button *ngIf="isShowAddToBook()" (click)=""
+</div>
+</div>
