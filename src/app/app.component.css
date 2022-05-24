@@ -1,0 +1,26 @@
+*{
+    margin: auto;
+
+}
+li{
+   margin-left: 4vw;
+}
+.aa{
+   color: red;
+}
+.aa:active ,.aa:hover ,.aa:after 
+{
+    background-color: red;
+    color: white;
+}
+td img{
+    margin-right: 5vw;
+}
+.imglogo{
+    width: 10%;
+    height: auto;
+    
+}
+/* table{
+    direction: rtl;
+} */

@@ -1,0 +1,21 @@
+<div class=" input-group-sm mb-3" style="width: 100vw;"> 
+    
+    <span class="input-group-text" style="width: 30vw;">
+        משך זמן הכנה
+        <input (input)="onFilter()" class="form-control"  type="number" [(ngModel)]="filter.time"/>  
+    </span>
+  
+    <span  class="input-group-text" style="width: 30vw;">
+                  שם מתכון
+        <input (input)="onFilter()" class="form-control" type="text" [(ngModel)]="filter.name"/>   
+    </span>
+
+    <span  class="input-group-text" style="width: 30vw;">
+                קטגוריה   
+        <select [(ngModel)]="filter.category" (click)="onFilter()" class="form-control">
+            <option *ngFor="let item of categories" [value]="item.Id">{{item.Name}}</option>
+        <!-- <input (input)="onFilter()"  type="text" [(ngModel)]="filter.category"/> -->
+ </select> 
+</span>
+</div>
+<app-small-recipe *ngFor="let x of arr" [myRecipe]="x" style="float: left;margin: 20px;"></app-small-recipe> 

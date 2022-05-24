@@ -1,0 +1,22 @@
+<div class="form-group" >
+<form [formGroup]='myForm'>
+    <p>שם מתכון</p>
+    <input class="form-control mb-2 mr-sm-2" type="text" formControlName="Name" /> 
+    <p>תיאור מתכון</p>
+    <input class="form-control mb-2 mr-sm-2" type="text" formControlName="Description" /> 
+    <p>בחר קטגוריה</p>
+    <select formControlName="IdCategory" class="form-control mb-2 mr-sm-2">
+    <option *ngFor="let item of categories" [value]="item.Id">{{item.Name}}</option>
+</select>
+<p>משך זמן הכנה</p>
+<input type="number" class="form-control mb-2 mr-sm-2" formControlName="TimeDursation" />
+<p>רמה</p>
+<input type="number" class="form-control mb-2 mr-sm-2" formControlName="Level" /> 
+</form>
+<p>מוצרים</p>
+<div  *ngFor="let x of items; let i=index"  ><input class="form-control mb-2 mr-sm-2" (input)="onInput(); " type="text"  [(ngModel)]="x.line"/> </div>
+<p class="sr-only">אופן ההכנה</p>
+<div  *ngFor="let x of pre; let i=index"  ><input class="form-control mb-2 mr-sm-2"(input)="onInput1(); " type="text"  [(ngModel)]="x.line"/> </div>
+
+<button [disabled]="!myForm.valid" (click)="add()" class=" btn btn-danger mb-2 mr-sm-2" >הוספת מתכון</button> 
+</div>

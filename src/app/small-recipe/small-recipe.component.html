@@ -1,0 +1,11 @@
+ <a   [href]="checkIfLogIn()" routerLinkActive="active" >
+
+    <div class="card">
+        <img [src]="myRecipe.Image" class="card-img-top"/>
+        <p class="list-group-item">  {{myRecipe.Name}}</p>
+       <p class="list-group-item"> {{myRecipe.TimeDursation|time}}</p>
+       <p class="list-group-item"> {{myRecipe.Level|level}}</p>
+          <p class="list-group-item"> 20</p> 
+       </div> 
+</a>
+

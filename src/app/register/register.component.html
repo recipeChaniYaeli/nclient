@@ -1,0 +1,50 @@
+<form [formGroup]='myForm' class="form-group">
+
+
+<p class="form-label">שם משתמש</p>
+<input type="text" formControlName="name"  class="form-control" class="form-control mb-2 mr-sm-2" />
+<div class="form-text" *ngIf="myForm.controls['name'].dirty&&myForm.controls['name'].errors?.required">*
+    שדה זה חובה
+
+</div>
+
+
+<div>
+    <p>קוד משתמש</p>
+    <input type="text" formControlName="id"  class="form-control mb-2 mr-sm-2" />
+    <div *ngIf="myForm.controls['id'].dirty&&myForm.controls['id'].errors?.required">*
+        שדה זה חובה
+    </div>
+    </div>
+    
+
+    <div>
+        <p>סיסימא</p>
+        <input type="password" formControlName="password" class="form-control mb-2 mr-sm-2" />
+        <div *ngIf="myForm.controls['password'].dirty&&myForm.controls['password'].errors?.required">*
+            שדה זה חובה
+        </div>
+        </div>
+        <div>
+            <p>אימות סיסימא</p>
+            <input type="password" formControlName="truepassword" class="form-control mb-2 mr-sm-2" />
+            <div *ngIf="myForm.controls['truepassword'].dirty&&myForm.controls['truepassword'].errors?.required">*
+                שדה זה חובה
+            </div>
+            <div *ngIf="myForm.errors?.DifferentError">*אימות סיסמא שגוי</div>
+            
+            </div>
+                    
+            <div>
+                <p>מייל</p>
+                <input type="email" formControlName="mail" class="form-control mb-2 mr-sm-2" />
+                <div *ngIf="myForm.controls['mail'].dirty&&myForm.controls['mail'].errors?.required">*
+                    שדה זה חובה
+                </div>
+                </div>
+           
+<button [disabled]="!myForm.valid" (click)="regis()" class=" btn btn-danger mb-2 mr-sm-2">הוספה</button>
+
+
+
+</form>
