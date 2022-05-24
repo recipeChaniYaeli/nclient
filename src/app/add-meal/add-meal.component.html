@@ -1,0 +1,23 @@
+<form class="form-group">
+    <div>
+        <p>שם הארוחה</p>
+        <input type="text" class="form-control mb-2 mr-sm-2" 
+
+         name="name" />
+    </div>
+    <div>
+        <p>בחר קטגוריה</p>
+        <select formControlName="IdCategory" class="form-control mb-2 mr-sm-2">
+            <option *ngFor="let item of categories" [value]="item.Id">{{item.Name}}</option>
+        </select>
+        <div *ngFor="let x of recipes">
+            <div class="card" style="float: left;margin: 20px;">
+                <img [src]="x.Image" class="card-img-top" />
+                <p class="list-group-item"> {{x.Name}}</p><label>הוספה</label>
+                <input type="checkbox" [name]="x.Id"/>
+            </div>
+        </div>
+    </div>
+  <div>  <button class=" btn btn-danger mb-2 mr-sm-2" (click)="addMeal()">הוסף ארוחה</button></div>
+
+</form>

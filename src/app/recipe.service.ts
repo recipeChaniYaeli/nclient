@@ -32,9 +32,9 @@ AddRecipe(recipe:Recipe,x:string[],y:string[]){
   recipe.Preparetion=y;
   recipe.ListOfRe=x;
   let num=Math.floor(Math.random() * 27);
-  if(recipe.IdCategory==null)
-    recipe.IdCategory=Math.floor(Math.random() * 4).toString();
-  recipe.Image="../../assets/image/"+num+".jpg"
+  if(recipe.RecipeCategoryId==null)
+    recipe.RecipeCategoryId=Math.floor(Math.random() * 4);
+  recipe.RecipeImage="../../assets/image/"+num+".jpg"
   //this.images[parseInt( recipe.IdCategory)-1];
 return this.http.post<Recipe>(this.baseUrl,recipe);
 }
@@ -46,10 +46,4 @@ PutRecipe(recipe:Recipe,id){
 return this.http.put<Recipe>(`${this.baseUrl}?id=${id}`,recipe)
 }
   constructor(private http:HttpClient) { }
-
-
-
-
-
-
 }
