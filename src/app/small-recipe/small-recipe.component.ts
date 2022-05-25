@@ -18,7 +18,7 @@ myRecipe:Recipe;
   checkIfLogIn()
   {
     if (sessionStorage.getItem("curentUser")!=null) {
-      return "recipedetailes/"+this.myRecipe.Id;
+      return "recipedetailes/"+this.myRecipe.RecipeId;
     }
     return 'login';
   }

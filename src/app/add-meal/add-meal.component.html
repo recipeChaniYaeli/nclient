@@ -8,13 +8,13 @@
     <div>
         <p>בחר קטגוריה</p>
         <select formControlName="IdCategory" class="form-control mb-2 mr-sm-2">
-            <option *ngFor="let item of categories" [value]="item.Id">{{item.Name}}</option>
+            <option *ngFor="let item of categories" [value]="item.CategoryId">{{item.CategoryName}}</option>
         </select>
         <div *ngFor="let x of recipes">
             <div class="card" style="float: left;margin: 20px;">
-                <img [src]="x.Image" class="card-img-top" />
-                <p class="list-group-item"> {{x.Name}}</p><label>הוספה</label>
-                <input type="checkbox" [name]="x.Id"/>
+                <img [src]="x.RecipeImage" class="card-img-top" />
+                <p class="list-group-item"> {{x.RecipeName}}</p><label>הוספה</label>
+                <input type="checkbox" [name]="x.RecipeId"/>
             </div>
         </div>
     </div>

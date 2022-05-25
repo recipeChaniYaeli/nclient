@@ -9,7 +9,6 @@ import { LogOutComponent } from './log-out/log-out.component';
 import { LoginComponent } from './login/login.component';
 import { MyBookRecipeComponent } from './my-book-recipe/my-book-recipe.component';
 import { RecipeDetailesComponent } from './recipe-detailes/recipe-detailes.component';
-import { RecipeToMealComponent } from './recipe-to-meal/recipe-to-meal.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [

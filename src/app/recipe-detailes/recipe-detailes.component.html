@@ -1,22 +1,22 @@
 
 <div>
-    <img style="float: left;"[src]="recipe.Image" class="imgre"/>
+    <img style="float: left;"[src]="recipe.RecipeImage" class="imgre"/>
     <div style="float: right ;margin-right: 3vw;" dir="rtl">
-<img [src]="category.IconROuting"/>
-<p>{{category.Name}}</p>
+<img [src]="category.CategoryIconROuting"/>
+<p>{{category.CategoryName}}</p>
 
-<p>{{recipe.Name}}</p>
+<p>{{recipe.RecipeName}}</p>
 <p>
-    {{recipe.Description}}
+    {{recipe.RecipeDescription}}
 </p>
-<p>{{recipe.TimeDursation|time}}</p>
-<p>{{recipe.Level|level}}</p>
-<ul type="none">רכיבים
+<p>{{recipe.RecipeTimeDursation|time}}</p>
+<p>{{recipe.RecipeLevel|level}}</p>
+<!--todo open <ul type="none">רכיבים
     <li *ngFor="let item1 of recipe.ListOfRe">🥄{{item1}}</li>
 </ul>
 <ol type="none">אופן ההכנה
     <li *ngFor="let item of recipe.Preparetion"> {{item}}</li>
-</ol>
+</ol> -->
 <!-- <p *ngFor="let item1 of recipe.ListOfRe"></p>
 <p *ngFor="let item of recipe.Preparetion">{{item}}</p> -->
 <button *ngIf="isShowDelete()" (click)="onDelete()" class=" btn btn-danger">מחיקה</button>

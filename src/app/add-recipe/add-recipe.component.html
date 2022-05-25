@@ -6,7 +6,7 @@
     <input class="form-control mb-2 mr-sm-2" type="text" formControlName="Description" /> 
     <p>בחר קטגוריה</p>
     <select formControlName="IdCategory" class="form-control mb-2 mr-sm-2">
-    <option *ngFor="let item of categories" [value]="item.Id">{{item.Name}}</option>
+    <option *ngFor="let item of categories" [value]="item.CategoryId">{{item.CategoryName}}</option>
 </select>
 <p>משך זמן הכנה</p>
 <input type="number" class="form-control mb-2 mr-sm-2" formControlName="TimeDursation" />
