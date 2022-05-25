@@ -13,7 +13,7 @@
     <span  class="input-group-text" style="width: 30vw;">
                 קטגוריה   
         <select [(ngModel)]="filter.category" (click)="onFilter()" class="form-control">
-            <option *ngFor="let item of categories" [value]="item.Id">{{item.Name}}</option>
+            <option *ngFor="let item of categories" [value]="item.CategoryId">{{item.CategoryName}}</option>
         <!-- <input (input)="onFilter()"  type="text" [(ngModel)]="filter.category"/> -->
  </select> 
 </span>

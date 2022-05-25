@@ -27,20 +27,20 @@ export class MyBookRecipeComponent implements OnInit {
       this.a=this.recipServ.arrRecipes;
   
       if (this.filter.time!=null) {
-        this.arr=this.arr.filter(o=>o.TimeDursation<this.filter.time)
+        this.arr=this.arr.filter(o=>o.RecipeTimeDursation<this.filter.time)
         this.a=this.arr;
       }
       else{this.arr=this.a;
   
       } 
    if (this.filter.name!="") {
-     this.arr=this.arr.filter(o=>o.Name.includes(this.filter.name,0))
+     this.arr=this.arr.filter(o=>o.RecipeName.includes(this.filter.name,0))
      this.a=this.arr;
    }
   else this.arr=this.a;
   
   if (this.filter.category!="") {
-    this.arr=this.arr.filter(o=>o.IdCategory==this.filter.category)
+    this.arr=this.arr.filter(o=>o.RecipeCategoryId.toString()==this.filter.category)
   }
   else this.arr=this.a;
     }

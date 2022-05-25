@@ -16,7 +16,6 @@ export class RecipeDetailesComponent implements OnInit {
 recipe:Recipe;
 id:string;
 category:Category;
-baseUrl="http://localhost:54716/api/category";
   constructor(public active:ActivatedRoute,public recSer:RecipeService,public router:Router,private http:HttpClient) { 
     this.active.params.subscribe((succ)=>{this.id=succ.obj;
 
@@ -29,7 +28,7 @@ baseUrl="http://localhost:54716/api/category";
   }
 get(){
  
-  this.recSer.GetCategoryById(this.recipe.IdCategory).subscribe((succ)=>{this.category=succ},
+  this.recSer.GetCategoryById(this.recipe.RecipeCategoryId).subscribe((succ)=>{this.category=succ},
   (error)=>alert("error"))
 }
   
@@ -51,7 +50,7 @@ get(){
 isShowDelete(){
   //לבדוק אם נכון
 var x=sessionStorage.getItem("curentUser")
-if (x==this.recipe.IdUser) {
+if (x==this.recipe.RecipeUserId.toString()) {
   return true
 }
 return false;
@@ -59,7 +58,7 @@ return false;
 onDelete(){
 Swal.fire({title:"האם אתה בטוח?",showCancelButton: true}).then((result) => {  
   if (result.value) {  
-    this.recSer.DeleteRecipe(this.recipe.Id).subscribe((secc)=>{
+    this.recSer.DeleteRecipe(this.recipe.RecipeId).subscribe((secc)=>{
 
       this.router.navigate(["allrecipes"]);
       

@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/module/user';
 import Swal from 'sweetalert2';
 import { DifferentValidation } from '../differentValidation';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,6 @@ import { DifferentValidation } from '../differentValidation';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  baseUrl="http://localhost:54716/api/user";
   user={
     id:"weyy",
     name:"fff",
@@ -29,14 +29,14 @@ myForm:FormGroup=new FormGroup({
 
 regis(){
   
-this.reg().subscribe(
+this.userSer.reg(this.myForm).subscribe(
 (succ)=>{
 Swal.fire({
 title:"",
-text:`The user ${succ.Name} was added succssfuly...`,
+text:`The user ${succ.UserName} was added succssfuly...`,
 icon:"success",
 })
-  sessionStorage.setItem("curentUser",succ.Id);
+  sessionStorage.setItem("curentUser",succ.UserId.toString());
   //alert(localStorage.getItem("curentUser"))
   this.router.navigate(["allrecipes"]);
   
@@ -54,12 +54,9 @@ icon:"warning",
 }
 
 i:string;
-reg(){
 
-  return this.http.put<User>(this.baseUrl,this.myForm.value)
-}
 //שליפת הנתונים שנשלחו עי ה login
-  constructor(private http:HttpClient,public active:ActivatedRoute,public router:Router) {
+  constructor(private http:HttpClient,public active:ActivatedRoute,public router:Router,public userSer:UserService) {
     this.active.params.subscribe(p=>this.myForm.get("id").setValue(p["id"]))
     
    }

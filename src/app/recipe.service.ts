@@ -29,8 +29,9 @@ GetRecipeByTime(time){
   return this.http.get<Recipe[]>(`${this.baseUrl}?time=${time}`)
 }
 AddRecipe(recipe:Recipe,x:string[],y:string[]){
-  recipe.Preparetion=y;
-  recipe.ListOfRe=x;
+  //todo 
+  // recipe.Preparetion=y;
+  // recipe.ListOfRe=x;
   let num=Math.floor(Math.random() * 27);
   if(recipe.RecipeCategoryId==null)
     recipe.RecipeCategoryId=Math.floor(Math.random() * 4);
